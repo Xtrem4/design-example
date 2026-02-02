@@ -1,0 +1,252 @@
+.features-promo {
+  background: #000;
+  padding: 0 12px 12px;
+}
+
+/* Trade-in banner */
+.promo-banner {
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  background: #f5f5f7;
+  border-radius: 20px;
+  padding: 52px 40px;
+  text-align: center;
+}
+
+.promo-banner-eyebrow {
+  font-size: 14px;
+  color: #6e6e73;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+}
+
+.promo-banner-title {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700;
+  color: #1d1d1f;
+  max-width: 700px;
+  margin: 0 auto 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.promo-link {
+  color: #06c;
+  font-size: 17px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.promo-link:hover {
+  text-decoration: underline;
+}
+
+/* Cards grid */
+.promo-cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.promo-card {
+  border-radius: 20px;
+  padding: 40px;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: scale(1.01);
+}
+
+.promo-card--wide {
+  grid-column: span 2;
+}
+
+.promo-card--dark {
+  background: #1d1d1f;
+  color: #f5f5f7;
+}
+
+.promo-card--dark a {
+  color: #2997ff;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.promo-card--dark a:hover {
+  text-decoration: underline;
+}
+
+.promo-card--light {
+  background: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.promo-card--light a {
+  color: #06c;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.promo-card--light a:hover {
+  text-decoration: underline;
+}
+
+.promo-card--gradient {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #f5f5f7;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.promo-card-content--center {
+  text-align: center;
+}
+
+.promo-card-icon {
+  margin-bottom: 16px;
+}
+
+.promo-card-content h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.promo-card-content p {
+  font-size: 17px;
+  margin: 0 0 12px;
+  opacity: 0.8;
+  max-width: 400px;
+}
+
+.promo-eyebrow-light {
+  font-size: 16px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 8px;
+}
+
+.promo-tv-title {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+}
+
+.promo-tv-sub {
+  font-size: 17px;
+  opacity: 0.7;
+  margin: 0 0 16px;
+}
+
+.promo-link-white {
+  color: #2997ff;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.promo-link-white:hover {
+  text-decoration: underline;
+}
+
+/* Art / decorations */
+.promo-card-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ai-art {
+  overflow: hidden;
+}
+
+.ai-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+
+.ai-orb-1 {
+  width: 200px;
+  height: 200px;
+  background: #667eea;
+  top: -40px;
+  right: 10%;
+  animation: float 8s ease infinite;
+}
+
+.ai-orb-2 {
+  width: 150px;
+  height: 150px;
+  background: #f093fb;
+  bottom: -20px;
+  right: 25%;
+  animation: float 6s ease 1s infinite;
+}
+
+.ai-orb-3 {
+  width: 180px;
+  height: 180px;
+  background: #4facfe;
+  top: 20%;
+  right: -20px;
+  animation: float 7s ease 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.tv-art {
+  overflow: hidden;
+}
+
+.tv-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(41, 151, 255, 0.2), transparent 70%);
+  bottom: -100px;
+  right: -50px;
+  animation: float 10s ease infinite;
+}
+
+@media (max-width: 768px) {
+  .promo-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-card--wide {
+    grid-column: span 1;
+  }
+
+  .promo-card {
+    min-height: 320px;
+    padding: 30px;
+  }
+
+  .promo-banner {
+    padding: 36px 24px;
+  }
+}

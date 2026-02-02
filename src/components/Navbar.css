@@ -1,0 +1,161 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(29, 29, 31, 0.9);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.navbar-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 16px;
+}
+
+.navbar-logo {
+  color: #f5f5f7;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.navbar-logo:hover {
+  opacity: 0.7;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #f5f5f7;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 0 10px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  letter-spacing: 0.01em;
+}
+
+.navbar-links li a:hover {
+  opacity: 1;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-icon {
+  background: none;
+  border: none;
+  color: #f5f5f7;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar-icon:hover {
+  opacity: 1;
+}
+
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  width: 18px;
+  height: 18px;
+}
+
+.navbar-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: #f5f5f7;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.navbar-hamburger.open span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.navbar-hamburger.open span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+.navbar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    background: rgba(29, 29, 31, 0.97);
+    flex-direction: column;
+    padding: 20px 40px 30px;
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideDown 0.3s ease;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links li a {
+    font-size: 17px;
+    padding: 12px 0;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  .navbar-overlay {
+    display: block;
+    position: fixed;
+    top: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
